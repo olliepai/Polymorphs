@@ -29,8 +29,11 @@ public class MovingMorph extends Polymorph {
 			ySpeed = -ySpeed;
 		}
 		
-		setX(++x);
-		setY(++y);
+		setX(x += xSpeed);
+		setY(y += ySpeed);
+		
+//		setX(++x);
+//		setY(++y);
 	}
 
 }

@@ -1,7 +1,11 @@
 /BluePolymorph.class
+/MovingMorph.class
 /Polymorph.class
 /PolymorphWindow.class
-/instructions
 /RedMorph.class
-/MovingMorph.class
-/HOSPITAL/
+/instructions
+/CircleMorph.class
+/MouseMorph.class
+/ImageMorph.class
+/Gumba.png
+/ClickMorph.class

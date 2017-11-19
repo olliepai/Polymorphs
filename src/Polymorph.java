@@ -24,15 +24,15 @@ public abstract class Polymorph {
 	}
 
 	public void setX(int newX) {
-		if (newX > PolymorphWindow.WIDTH) {
-			x = PolymorphWindow.WIDTH;
-		}
-		else if (newX < 0) {
-			x = 0;
-		}
-		else {
+//		if (newX > PolymorphWindow.WIDTH) {
+//			x = PolymorphWindow.WIDTH;
+//		}
+//		else if (newX < 0) {
+//			x = 0;
+//		}
+//		else {
 			x = newX;
-		}
+//		}
 	}
 
 	public int getY() {
@@ -40,15 +40,15 @@ public abstract class Polymorph {
 	}
 
 	public void setY(int newY) {
-		if (newY > PolymorphWindow.HEIGHT ) {
-			y = PolymorphWindow.HEIGHT;
-		}
-		else if (newY < 0) {
-			y = 0;
-		}
-		else {
+//		if (newY > PolymorphWindow.HEIGHT ) {
+//			y = PolymorphWindow.HEIGHT;
+//		}
+//		else if (newY < 0) {
+//			y = 0;
+//		}
+//		else {
 			y = newY;
-		}
+//		}
 	}
 	
 	public int getWidth() {

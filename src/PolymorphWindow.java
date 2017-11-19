@@ -3,6 +3,8 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -31,15 +33,27 @@ public class PolymorphWindow extends JPanel implements ActionListener {
 		window.pack();
 		window.setVisible(true);
 
-		for (int i = 0; i < 10; i++) {
-			int type = new Random().nextInt(3);
+		for (int i = 0; i < 8000; i++) {
+			int type = new Random().nextInt(7);
 
 			if (type == 0) {
-				polymorphs.add(new BluePolymorph(new Random().nextInt(WIDTH), new Random().nextInt(HEIGHT), 10, 10));
+				polymorphs.add(new BluePolymorph(new Random().nextInt(WIDTH), new Random().nextInt(HEIGHT), 5, 5));
 			} else if (type == 1) {
-				polymorphs.add(new RedMorph(new Random().nextInt(WIDTH), new Random().nextInt(HEIGHT), 10, 10));
+				polymorphs.add(new RedMorph(new Random().nextInt(WIDTH), new Random().nextInt(HEIGHT), 5, 5));
 			} else if (type == 2) {
-				polymorphs.add(new MovingMorph(new Random().nextInt(WIDTH), new Random().nextInt(HEIGHT), 10, 10));
+				polymorphs.add(new MovingMorph(new Random().nextInt(WIDTH), new Random().nextInt(HEIGHT), 5, 5));
+			} else if (type == 3) {
+				polymorphs.add(new CircleMorph(new Random().nextInt(WIDTH), new Random().nextInt(HEIGHT), 5, 5));
+			} else if (type == 4) {
+				Polymorph mouseMorph = new MouseMorph(new Random().nextInt(WIDTH), new Random().nextInt(HEIGHT), 5, 5, new Random().nextInt(100), new Random().nextInt(100));
+				polymorphs.add(mouseMorph);
+				window.addMouseMotionListener((MouseMorph) mouseMorph);
+			} else if (type == 5) {
+				polymorphs.add(new ImageMorph(new Random().nextInt(WIDTH), new Random().nextInt(HEIGHT), 5, 5));
+			} else if (type == 6) {
+				Polymorph clickMorph = new ClickMorph(new Random().nextInt(WIDTH), new Random().nextInt(HEIGHT), 5, 5);
+				polymorphs.add(clickMorph);
+				window.addMouseListener((ClickMorph) clickMorph);
 			}
 		}
 
